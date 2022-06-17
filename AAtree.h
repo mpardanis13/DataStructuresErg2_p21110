@@ -224,6 +224,7 @@ T AATree<T>::
     return t == NULL ? 0 : t->loot;
 }
 
+// Methodoi epidiorthoshs toy dendroy
 template <class T>
 void AATree<T>::
     rotateWithLeftChild(Node *&k2) const
@@ -265,6 +266,7 @@ void AATree<T>::
     }
 }
 
+// Dhlwsh methodoy gia thn sygkrish twn keliwn toy kyboy morfhs (x,y,z)
 template <class T>
 bool AATree<T>::isGreaterThan(const int x[], const int y[]) const
 {

@@ -3,14 +3,13 @@
 #include <iostream>
 #include <random>
 
-using namespace std;
+using std::cout, std::cin, std::endl, std::bind;
 
 void findNearestLootOnX(AATree<int> &t, int thesi[], int N);
 
 int main()
 {
     // O xrhsths orizei th diastash toy kyboy kai tis kinhseis poy ua ginoyn apo ton hrwa
-    // extern int N;
     int N, moves;
     cout << "Dwste th diastash toy kyboy: ";
     cin >> N;
@@ -48,9 +47,9 @@ int main()
     // Topothetish toy hrwa se ena tyxaio keli
     int thesi_hrwa[3] = {random_cell(), random_cell(), random_cell()};
 
+    // Kinhsh hrwa
     for (int i = 0; i < moves; i++)
     {
-        // Kinhsh hrwa
         for (int i = 0; i < 3; i++)
         {
             int move = random_move();
@@ -70,14 +69,18 @@ int main()
         }
     }
     cout << "H leia poy mazepse o hrwas einai: " << loot << endl;
+
+    // Ektelesh ths diadikasias poy perigrafetai sthn ekfwwnhsh
     findNearestLootOnX(kybos, thesi_hrwa, N);
 
     return 0;
 }
 
+// Prostheth dynatothta poy zhteitai
 void findNearestLootOnX(AATree<int> &t, int thesi[], int N)
 {
     int found1 = -1, found2 = -1, distance1 = 0, distance2 = 0, arxikh_thesi = thesi[0];
+    // Elegxoyme panw apo to keli
     while (thesi[0] < N)
     {
         thesi[0]++;
@@ -90,6 +93,7 @@ void findNearestLootOnX(AATree<int> &t, int thesi[], int N)
     }
     thesi[0] = arxikh_thesi;
 
+    // Elegxoyme katw apo to keli
     while (thesi[0] > 0)
     {
         thesi[0]--;
